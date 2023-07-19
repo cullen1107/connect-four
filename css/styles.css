@@ -28,4 +28,9 @@ body {
 .board-spot {
   background: #fff;
   border-radius: 50%;
+  cursor: pointer;
+}
+
+.board-spot.filled {
+  background: red;
 }
