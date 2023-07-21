@@ -16,10 +16,26 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  const checkBoard = () => {
-    console.log("yo");
-  };
+  const checkBoard = (player) => {
+    const filledSpotsPlayerOne =
+      document.querySelectorAll(".filled.player-one");
+    console.log(filledSpotsPlayerOne);
+    const winningHorizontalCombos = [
+      ["a6", "b6", "c6", "d6"],
+      ["b6", "c6", "d6", "e6"],
+      ["c6", "d6", "e6", "f6"],
+      ["d6", "e6", "f6", "g6"],
 
+      ["a5", "b5", "c5", "d5"],
+      ["b5", "c5", "d5", "e5"],
+      ["c5", "d5", "e5", "f5"],
+      ["d5", "e5", "f5", "g5"],
+    ];
+    let spots = [];
+    filledSpotsPlayerOne.forEach((spot) => {
+      spots.push(spot.dataset.id);
+    });
+  };
   const boardSpots = document.querySelectorAll(".board-spot");
   boardSpots.forEach((boardSpot) => {
     boardSpot.addEventListener("click", () => {
